@@ -1,13 +1,17 @@
 import { ReactNode } from "react";
 import BottomNavigation from "./BottomNavigation";
+import ScrollIndicator from "./ScrollIndicator";
+import { useScrollNavigation } from "../hooks/useScrollNavigation";
 
 interface LayoutProps {
   children: ReactNode;
 }
 
 export default function Layout({ children }: LayoutProps) {
+  useScrollNavigation();
+  
   return (
-    <div className="min-h-screen relative noise-texture">
+    <div className="min-h-screen relative noise-texture overflow-hidden">
       {/* Header */}
       <header className="fixed top-0 left-0 right-0 z-50 p-6">
         <div className="flex justify-between items-center max-w-7xl mx-auto">
@@ -39,12 +43,13 @@ export default function Layout({ children }: LayoutProps) {
         </div>
       </header>
 
-      {/* Background Charts */}
-      <div className="fixed left-0 top-0 w-64 h-full candlestick-chart chart-left opacity-20 pointer-events-none z-0"></div>
-      <div className="fixed right-0 top-0 w-64 h-full candlestick-chart chart-right opacity-20 pointer-events-none z-0"></div>
+
+
+      {/* Scroll Indicator */}
+      <ScrollIndicator />
 
       {/* Main Content */}
-      <div className="min-h-screen flex flex-col relative globe-overlay">
+      <div className="min-h-screen flex flex-col relative">
         <div className="flex-1 relative z-10">
           {children}
         </div>
