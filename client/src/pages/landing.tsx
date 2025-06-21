@@ -1,5 +1,6 @@
 import { Link } from "wouter";
 import { useEffect, useState } from "react";
+import { Button } from "@/components/ui/button";
 
 export default function Landing() {
   const [mouseY, setMouseY] = useState(0);
@@ -8,62 +9,109 @@ export default function Landing() {
     const handleMouseMove = (e: MouseEvent) => {
       setMouseY(e.clientY);
     };
-    window.addEventListener('mousemove', handleMouseMove);
-    return () => window.removeEventListener('mousemove', handleMouseMove);
+    window.addEventListener("mousemove", handleMouseMove);
+    return () => window.removeEventListener("mousemove", handleMouseMove);
   }, []);
 
   return (
     <div className="flex items-center justify-center px-6 py-20 min-h-screen relative">
-      {/* Planet SVG - Center */}
-      <div 
-        className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-15 pointer-events-none z-0"
+      <div
+        className="absolute top-1/3 transform -translate-y-1/3 pointer-events-none z-0"
         style={{
-          transform: `translate(-50%, -50%) rotate(${mouseY * 0.02}deg)`,
-          transition: 'transform 0.3s ease-out'
+          transition: "transform 0.3s ease-out",
         }}
       >
-        <img src="/planet.svg" alt="" className="w-[600px] h-[600px]" />
+        <img
+          src="/chart.svg"
+          alt=""
+          className="w-[100vw] h-full object-contain"
+        />
+      </div>
+
+      {/* Planet SVG - Center with continuous rotation */}
+      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 pointer-events-none z-0 planet-rotate">
+        <img src="/planet-2d.svg" alt="" className="w-[70vh] h-[70vh]" />
       </div>
 
       {/* Chart SVG - Left */}
-      <div 
-        className="absolute left-8 top-1/2 transform -translate-y-1/2 opacity-20 pointer-events-none z-0"
+      {/* <div
+        className="absolute top-1/2 transform -translate-y-1/2 pointer-events-none z-0"
         style={{
           transform: `translateY(calc(-50% + ${mouseY * 0.05}px))`,
-          transition: 'transform 0.3s ease-out'
+          transition: "transform 0.3s ease-out",
         }}
       >
-        <img src="/chart.svg" alt="" className="w-64 h-full object-contain scale-x-[-1]" />
-      </div>
+        <img
+          src="/chart.svg"
+          alt=""
+          className="w-full h-full object-contain scale-x-[-1]"
+        />
+      </div> */}
 
       {/* Chart SVG - Right */}
-      <div 
-        className="absolute right-8 top-1/2 transform -translate-y-1/2 opacity-20 pointer-events-none z-0"
+      {/* <div
+        className="absolute right-8 top-1/2 transform -translate-y-1/2 pointer-events-none z-0"
         style={{
           transform: `translateY(calc(-50% - ${mouseY * 0.05}px))`,
-          transition: 'transform 0.3s ease-out'
+          transition: "transform 0.3s ease-out",
         }}
       >
-        <img src="/chart.svg" alt="" className="w-64 h-full object-contain" />
+        <img src="/chart.svg" alt="" className="w-full h-full object-contain" />
+      </div> */}
+
+      <div className="text-center max-w-7xl mx-auto relative z-10">
+        <div
+          className="relative mb-8 flex justify-center w-full"
+          style={{ height: "136px" }}
+        >
+          <img
+            src="/logo-shadow.svg"
+            alt=""
+            className="absolute mt-[4px] mr-[-10px]"
+            // style={{ top: "11.95px", left: "10.3px" }}
+          />
+          <img
+            src="/logo-text.svg"
+            alt="TradingPlan"
+            className="absolute"
+          />
+        </div>
+        <p
+          className="text-2xl text-white mb-12 leading-8 max-w-6xl mx-auto"
+          style={{ fontFamily: "Ubuntu Mono, monospace" }}
+        >
+          Every click without a{" "}
+          <span className="text-[var(--primary-blue)] font-normal">plan</span>{" "}
+          is another nail in your financial coffin. The market does not forgive
+          fools. It will eat you up and not even notice. You are either predator
+          or prey.{" "}
+          <span className="text-[var(--primary-blue)] font-normal">
+            Decide.
+          </span>
+        </p>
       </div>
 
-      <div className="text-center max-w-4xl mx-auto relative z-10">
-        <div className="relative mb-8">
-          <h1 className="text-6xl md:text-8xl font-black tracking-tight text-white relative z-10" style={{ textShadow: '3px 3px 0px #1C1D1F, 6px 6px 0px #1C1D1F' }}>
-            TradingPlan
-          </h1>
-          <h1 className="text-6xl md:text-8xl font-black tracking-tight text-white absolute top-0 left-0 w-full text-center" style={{ transform: 'translate(3px, 3px)', zIndex: 5 }}>
-            TradingPlan
-          </h1>
-        </div>
-        <p className="text-2xl text-white mb-12 leading-8 max-w-5xl mx-auto" style={{ fontFamily: 'Ubuntu Mono, monospace' }}>
-          Every click without a <span className="text-[var(--primary-blue)] font-normal">plan</span> is another nail in your financial coffin. The market does not forgive 
-          fools. It will eat you up and not even notice. You are either predator or prey. <span className="text-[var(--primary-blue)] font-normal">Decide.</span>
-        </p>
+      {/* Fixed positioned button at bottom right */}
+      <div className="fixed bottom-24 right-8 z-50">
         <Link href="/ai-agent">
-          <button className="bg-white text-black px-8 py-4 text-lg font-bold tracking-wide hover:bg-gray-100 transition-all duration-300 hover:scale-105">
-            START MANAGING YOUR TRADE NOW
-          </button>
+          <div className="relative">
+            {/* Shadow element */}
+            <div className="absolute inset-0 bg-black border-[#6281BB] border-2 translate-x-0 translate-y-0 group-hover:translate-x-2 group-hover:translate-y-2 transition-transform duration-300 ease-out"></div>
+            {/* Main button */}
+            <button className="relative bg-white text-black font-tektur font-semibold text-[20px] leading-[26px] text-center uppercase py-4 px-[45px] transition-all duration-300 ease-out hover:-translate-x-1 hover:-translate-y-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 group">
+              <span className="inline-block">
+                START MANAGING YOUR TRADE{" "}
+                <span className="relative inline-block">
+                  <span className="group-hover:opacity-0 group-hover:scale-110 group-hover:text-red-500 group-hover:duration-150 duration-0">
+                    NOW
+                  </span>
+                  <span className="absolute left-0 top-0 opacity-0 group-hover:opacity-100 group-hover:translate-x-2  group-hover:text-black font-bold font-italic group-hover:translate-y-0 duration-0 group-hover:duration-150 ease-out">
+                    →
+                  </span>
+                </span>
+              </span>
+            </button>
+          </div>
         </Link>
       </div>
     </div>

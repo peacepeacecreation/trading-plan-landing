@@ -5,6 +5,11 @@ export default {
   content: ["./client/index.html", "./client/src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {
+      fontFamily: {
+        tektur: ['Tektur', 'sans-serif'],
+        sans: ['"Tektur"', "sans-serif"],
+        ubuntu: ['"Ubuntu"', "sans-serif"],
+      },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
@@ -41,8 +46,11 @@ export default {
           DEFAULT: "var(--destructive)",
           foreground: "var(--destructive-foreground)",
         },
-        border: "var(--border)",
-        input: "var(--input)",
+        "nav-border": "#252C38",
+        "nav-text-active": "#C3C3C7",
+        "nav-text-inactive": "#717782",
+        border: "hsl(var(--border))",
+        input: "hsl(var(--input))",
         ring: "var(--ring)",
         chart: {
           "1": "var(--chart-1)",

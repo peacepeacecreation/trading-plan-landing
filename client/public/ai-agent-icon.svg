@@ -1,0 +1,17 @@
+<svg width="124" height="124" viewBox="0 0 124 124" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <style>
+            .ai-icon-fill { fill: var(--ai-icon-color, white); }
+        </style>
+    </defs>
+    <!-- Ears -->
+    <rect x="15" y="44" width="12" height="40" class="ai-icon-fill"/>
+    <rect x="97" y="44" width="12" height="40" class="ai-icon-fill"/>
+
+    <!-- Antenna -->
+    <rect x="58" y="22" width="8" height="12" class="ai-icon-fill"/>
+    <rect x="56" y="10" width="12" height="12" class="ai-icon-fill"/>
+
+    <!-- Robot Head with square eyes (cutouts) -->
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M27 34H97V94H27V34ZM40 58H52V70H40V58ZM72 58H84V70H72V58Z" class="ai-icon-fill"/>
+</svg> 

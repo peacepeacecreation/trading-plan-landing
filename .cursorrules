@@ -1,0 +1,143 @@
+# Cursor Rules for TraderPlanLanding
+
+## Project Overview
+This is a trading platform landing page with AI agent integration. The project uses React + TypeScript frontend with Express.js backend.
+
+## Code Style & Standards
+
+### TypeScript
+- Use strict TypeScript configuration
+- Always define proper types for props, state, and API responses
+- Use interfaces for object shapes, types for unions/primitives
+- Avoid `any` type - use proper typing
+
+### React Patterns
+- Use functional components with hooks
+- Prefer `useState` and `useEffect` for simple state management
+- Use React Query for server state management
+- Implement proper error boundaries
+
+### File Organization
+- Components go in `client/src/components/`
+- Pages go in `client/src/pages/`
+- Utilities go in `client/src/lib/`
+- Custom hooks go in `client/src/hooks/`
+- UI components use Radix UI primitives
+
+### Styling
+- Use Tailwind CSS for all styling
+- Follow mobile-first responsive design
+- Use CSS custom properties for theme colors
+- Implement smooth animations with Framer Motion
+
+### Naming Conventions
+- Components: PascalCase (e.g., `AIAgent.tsx`)
+- Files: kebab-case for utilities, PascalCase for components
+- Variables: camelCase
+- Constants: UPPER_SNAKE_CASE
+
+## Architecture Guidelines
+
+### Frontend Structure
+- Single page application with client-side routing
+- Component-based architecture
+- Separation of concerns between UI and business logic
+- Use of custom hooks for reusable logic
+
+### Backend Structure
+- RESTful API design
+- Proper error handling and validation
+- Database operations through Drizzle ORM
+- WebSocket support for real-time features
+
+### State Management
+- React Query for server state
+- Local state with useState/useReducer
+- Avoid prop drilling - use context when needed
+
+## Development Workflow
+
+### Before Writing Code
+1. Understand the existing component structure
+2. Check for similar patterns in the codebase
+3. Plan the component hierarchy
+4. Consider mobile responsiveness
+
+### When Adding Features
+1. Create TypeScript interfaces first
+2. Implement the component logic
+3. Add proper error handling
+4. Test on different screen sizes
+5. Add loading states where appropriate
+
+### Code Quality
+- Write self-documenting code
+- Add JSDoc comments for complex functions
+- Use meaningful variable and function names
+- Keep components focused and single-purpose
+
+## UI/UX Guidelines
+
+### Design Principles
+- Dark theme with blue accents
+- Technical/futuristic aesthetic
+- Smooth animations and transitions
+- Mobile-first responsive design
+
+### Component Patterns
+- Use Radix UI primitives for accessibility
+- Implement proper focus management
+- Add loading and error states
+- Use consistent spacing and typography
+
+### Animation Guidelines
+- Use Framer Motion for complex animations
+- Keep animations subtle and purposeful
+- Ensure animations don't interfere with usability
+- Test animations on lower-end devices
+
+## Performance Considerations
+
+### Optimization
+- Lazy load components when possible
+- Optimize images and assets
+- Use React.memo for expensive components
+- Implement proper caching strategies
+
+### Bundle Size
+- Import only needed components from libraries
+- Use dynamic imports for code splitting
+- Monitor bundle size with build tools
+
+## Testing & Quality Assurance
+
+### Code Review Checklist
+- [ ] TypeScript types are properly defined
+- [ ] Component is responsive on all screen sizes
+- [ ] Error states are handled
+- [ ] Loading states are implemented
+- [ ] Accessibility features are included
+- [ ] Animations work smoothly
+
+### Common Issues to Avoid
+- Don't use inline styles when Tailwind classes are available
+- Don't forget to handle loading and error states
+- Don't ignore mobile responsiveness
+- Don't use `any` type in TypeScript
+- Don't create deeply nested component hierarchies
+
+## Project-Specific Notes
+
+### Trading Theme
+- Use trading/financial terminology appropriately
+- Implement charts and data visualization where needed
+- Consider the serious nature of trading decisions
+- Maintain professional appearance
+
+### AI Integration
+- Design interfaces for AI agent interaction
+- Consider user experience for AI-powered features
+- Implement proper feedback mechanisms
+- Handle AI response states appropriately
+
+Remember: This is a trading platform - accuracy, reliability, and professional appearance are crucial. 
