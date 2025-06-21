@@ -150,3 +150,5 @@ MIT License
 ---
 
 **Remember**: Every click without a plan is another nail in your financial coffin. The market does not forgive fools. You are either predator or prey. **Decide.**
+
+
