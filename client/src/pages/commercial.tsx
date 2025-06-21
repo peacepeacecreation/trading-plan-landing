@@ -42,7 +42,7 @@ export default function Commercial() {
           <div className="flex flex-col sm:flex-row justify-center space-y-3 sm:space-y-0 sm:space-x-6">
             <Button
               variant="primary"
-              className="px-6 sm:px-10 py-2 sm:py-4 text-sm sm:text-lg font-bold"
+              className="px-8 sm:px-10 py-2 sm:py-4 text-sm sm:text-lg font-bold"
             >
               START FREE TRIAL
             </Button>
@@ -54,6 +54,7 @@ export default function Commercial() {
             </Button>
           </div>
         </div>
+
 
         {/* <Link href="/">
           <Button variant="outline" className="text-white mx-auto">
