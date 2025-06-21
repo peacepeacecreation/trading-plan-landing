@@ -55,11 +55,11 @@ export default function Commercial() {
           </div>
         </div>
 
-        <Link href="/">
+        {/* <Link href="/">
           <Button variant="outline" className="text-white mx-auto">
             ← Back to Home
           </Button>
-        </Link>
+        </Link> */}
       </div>
     </div>
   );
