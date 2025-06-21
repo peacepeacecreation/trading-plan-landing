@@ -32,7 +32,7 @@ export default function Commercial() {
           </div>
         </div>
 
-        <div className="bg-gradient-to-r from-[var(--primary-blue)]/20 to-blue-600/20 border border-[var(--primary-blue)]/30 p-6 sm:p-12 mb-6 sm:mb-12 mx-4 sm:mx-0">
+        {/* <div className="bg-gradient-to-r from-[var(--primary-blue)]/20 to-blue-600/20 border border-[var(--primary-blue)]/30 p-6 sm:p-12 mb-6 sm:mb-12 mx-4 sm:mx-0">
           <h3 className="text-xl sm:text-3xl font-bold mb-3 sm:mb-6 text-white">Ready to Transform Your Trading?</h3>
           <p className="text-sm sm:text-lg text-gray-300 mb-4 sm:mb-8 max-w-2xl mx-auto leading-4 sm:leading-6">
             Start with our 30-day free trial. No credit card required. Cancel anytime. 
@@ -53,7 +53,7 @@ export default function Commercial() {
               VIEW PRICING
             </Button>
           </div>
-        </div>
+        </div> */}
 
 
         {/* <Link href="/">
