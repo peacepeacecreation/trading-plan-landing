@@ -69,13 +69,13 @@ export default function BottomNavigation() {
 
   return (
   // bg-[var(--bg-dark)]/90 backdrop-blur-sm
-    <nav className="fixed bottom-0 left-0 right-0 border-t-2 border-nav-border mx-[38px] z-20 font-mono">
-      <div className="max-w-full mx-auto relative pt-4 pb-4">
+    <nav className="hidden sm:block fixed bottom-0 left-0 right-0 border-t-2 border-nav-border mx-4 sm:mx-[38px] z-20 font-mono">
+      <div className="max-w-full mx-auto relative pt-3 sm:pt-4 pb-3 sm:pb-4">
         <div
           className="absolute top-0 left-0 h-[1px] bg-white transition-all duration-300 ease-in-out"
           style={{ width: `${progressWidth}px` }}
         ></div>
-        <div ref={navContainerRef} className="grid grid-cols-5 gap-[47px] text-sm">
+        <div ref={navContainerRef} className="grid grid-cols-5 gap-2 sm:gap-[47px] text-xs sm:text-sm">
           {navigationSections.map((section, index) => {
             const isCurrent = isActive(section.path);
             const alignment =
@@ -97,9 +97,9 @@ export default function BottomNavigation() {
                       : "text-nav-text-inactive"
                   }`}
                 >
-                  <div className={`flex items-center gap-2 ${alignment}`}>
-                    <span>{section.id}</span>
-                    <span>{section.title}</span>
+                  <div className={`flex flex-col sm:flex-row items-center gap-1 sm:gap-2 ${alignment}`}>
+                    <span className="text-[10px] sm:text-xs">{section.id}</span>
+                    <span className="text-[8px] sm:text-xs leading-tight sm:leading-normal text-center sm:text-left">{section.title}</span>
                   </div>
                 </Link>
               );
@@ -111,9 +111,9 @@ export default function BottomNavigation() {
                 key={section.id}
                 className="nav-section opacity-50 cursor-not-allowed text-nav-text-inactive"
               >
-                <div className={`flex items-center gap-2 ${alignment}`}>
-                  <span>{section.id}</span>
-                  <span>{section.title}</span>
+                <div className={`flex flex-col sm:flex-row items-center gap-1 sm:gap-2 ${alignment}`}>
+                  <span className="text-[10px] sm:text-xs">{section.id}</span>
+                  <span className="text-[8px] sm:text-xs leading-tight sm:leading-normal text-center sm:text-left">{section.title}</span>
                 </div>
               </div>
             );

@@ -14,7 +14,7 @@ export default function Landing() {
   }, []);
 
   return (
-    <div className="flex items-center justify-center px-6 py-20 min-h-screen relative">
+    <div className="flex items-center justify-center px-4 sm:px-6 py-16 sm:py-20 min-h-screen relative">
       <div
         className="absolute top-1/3 transform -translate-y-1/3 pointer-events-none z-0"
         style={{
@@ -30,7 +30,7 @@ export default function Landing() {
 
       {/* Planet SVG - Center with continuous rotation */}
       <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 pointer-events-none z-0 planet-rotate">
-        <img src="/planet-2d.svg" alt="" className="w-[70vh] h-[70vh]" />
+        <img src="/planet-2d.svg" alt="" className="w-[50vh] sm:w-[70vh] h-[50vh] sm:h-[70vh]" />
       </div>
 
       {/* Chart SVG - Left */}
@@ -59,25 +59,24 @@ export default function Landing() {
         <img src="/chart.svg" alt="" className="w-full h-full object-contain" />
       </div> */}
 
-      <div className="text-center max-w-7xl mx-auto relative z-10">
+      <div className="text-center max-w-4xl sm:max-w-7xl mx-auto relative z-10">
         <div
-          className="relative mb-8 flex justify-center w-full"
-          style={{ height: "136px" }}
+          className="relative mb-6 sm:mb-8 flex justify-center w-full"
+          style={{ height: "80px" }}
         >
           <img
             src="/logo-shadow.svg"
             alt=""
-            className="absolute mt-[4px] mr-[-10px]"
-            // style={{ top: "11.95px", left: "10.3px" }}
+            className="absolute mt-[2px] sm:mt-[4px] mr-[-5px] sm:mr-[-10px] w-full sm:w-auto max-w-[300px] sm:max-w-none"
           />
           <img
             src="/logo-text.svg"
             alt="TradingPlan"
-            className="absolute"
+            className="absolute w-full sm:w-auto max-w-[300px] sm:max-w-none"
           />
         </div>
         <p
-          className="text-2xl text-white mb-12 leading-8 max-w-6xl mx-auto"
+          className="text-lg sm:text-2xl text-white mb-8 sm:mb-12 leading-6 sm:leading-8 max-w-4xl sm:max-w-6xl mx-auto px-4 sm:px-0"
           style={{ fontFamily: "Ubuntu Mono, monospace" }}
         >
           Every click without a{" "}
@@ -91,14 +90,14 @@ export default function Landing() {
         </p>
       </div>
 
-      {/* Fixed positioned button at bottom right */}
-      <div className="fixed bottom-24 right-8 z-50">
+      {/* Centered button for mobile, fixed positioned for desktop */}
+      <div className="fixed sm:fixed bottom-20 sm:bottom-24 left-1/2 sm:right-4 sm:left-auto transform -translate-x-1/2 sm:transform-none z-50">
         <Link href="/ai-agent">
           <div className="relative">
             {/* Shadow element */}
             <div className="absolute inset-0 bg-black border-[#6281BB] border-2 translate-x-0 translate-y-0 group-hover:translate-x-2 group-hover:translate-y-2 transition-transform duration-300 ease-out"></div>
             {/* Main button */}
-            <button className="relative bg-white text-black font-tektur font-semibold text-[20px] leading-[26px] text-center uppercase py-4 px-[45px] transition-all duration-300 ease-out hover:-translate-x-1 hover:-translate-y-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 group">
+            <button className="relative bg-white text-black font-tektur font-semibold text-[14px] sm:text-[20px] leading-[18px] sm:leading-[26px] text-center uppercase py-3 sm:py-4 px-6 sm:px-[45px] transition-all duration-300 ease-out hover:-translate-x-1 hover:-translate-y-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 group">
               <span className="inline-block">
                 START MANAGING YOUR TRADE{" "}
                 <span className="relative inline-block">
